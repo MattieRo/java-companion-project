@@ -1,14 +1,14 @@
-package com.organization.mvcproject.MGL_Task1.model;
+package com.organization.mvcproject.MGLTask1.model;
 
 public class Review {
 	
 	/**
-	 * TODO 1.0 java object member variable naming convention, 
+	 * TODO 1.0 java object member variable naming convention,
 	 * one member declared here is not object oriented refactor it
 	 */
 	private String reviewBody;
 	private String author;
-	private Integer rating;
+	private int customerRating;
 
 	public String getAuthor() {
 		return author;
@@ -18,12 +18,12 @@ public class Review {
 		this.author = author;
 	}
 
-	public Integer getRating() {
-		return rating;
+	public Integer getCustomerRating() {
+		return customerRating;
 	}
 
-	public void setRating(Integer rating) {
-		this.rating = rating;
+	public void setCustomerRating(int rating) {
+		this.customerRating = rating;
 	}
 
 	public String getReviewBody() {

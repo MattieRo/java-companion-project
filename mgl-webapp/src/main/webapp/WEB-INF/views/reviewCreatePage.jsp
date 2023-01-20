@@ -17,7 +17,7 @@
                 body {
                 	background-image:
                 		url('https://ak6.picdn.net/shutterstock/videos/1024598666/thumb/1.jpg');
-                	background-repeat: no-repeat;
+                	background-repeat: repeat;
                 	background-size: cover;
                 }
             </style>

@@ -5,9 +5,9 @@
 
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-        <script src="resources/static/js/app.js" /></script>
-        <script src="resources/static/js/MGL_Task1.service.js"></script>
-        <script src="resources/static/js/MGL_Task1.controller.js"></script>
+        <script src="resources/static/js/app.js"></script>
+        <script src="resources/static/js/service/MGL_Task1.service.js"></script>
+        <script src="resources/static/js/controller/MGL_Task1.controller.js"></script>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,7 +17,7 @@
             body {
             	background-image:
             		url('https://ak6.picdn.net/shutterstock/videos/1024598666/thumb/1.jpg');
-            	background-repeat: no-repeat;
+            	background-repeat: repeat;
             	background-size: cover;
             }
         </style>
@@ -59,9 +59,9 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="container">
                             <div class="form-actions floatRight">
-                                <input type="submit" value="Add" class="btn btn-primary btn-sm">
+                            	<input type="submit" value="Add" class="btn btn-primary btn-md">
                             </div>
                         </div>
                     </form>
@@ -81,8 +81,8 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="currentGame in MGL_T1_ctrl.games">
-                                <td><span ng-bind="currentGame.game_name"></span></td>
-                                <td><span ng-bind="currentGame.game_genre"></span></td>
+                                <td><span ng-bind="currentGame.gameName"></span></td>
+                                <td><span ng-bind="currentGame.gameGenre"></span></td>
                                 <td>
                                 </td>
                             </tr>
