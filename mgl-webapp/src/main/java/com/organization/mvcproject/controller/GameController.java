@@ -48,7 +48,9 @@ public class GameController {
 	}
 
 	/**
-	 * TODO 2.0 (Separation of concerns) consider moving all controller endpoints that return a ResponseEntity into a @RestController.
+	 * TODO 2.0 (Separation of concerns) consider moving all 
+	 * controller endpoints that return a ResponseEntity into 
+	 * a @RestController.
 	 */
 	
 	@RequestMapping(value = "/game", method = RequestMethod.GET)
@@ -62,3 +64,5 @@ public class GameController {
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 }
+
+
