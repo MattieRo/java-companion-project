@@ -5,10 +5,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.organization.mvcproject.model.Game;
+import com.organization.mvcproject.api.dao.GameDao;
+import com.organization.mvcproject.api.model.Game;
 
 @Repository
-public class GameDAOMock {
+public class GameDAOMock implements GameDao {
     private static Long gameId = new Long(0);
     private static Long companyId = new Long(0);
     private static List<Game> games = new ArrayList<Game>();
@@ -41,10 +42,12 @@ public class GameDAOMock {
         return games;
     }
     
+    @Override
     public List<Game> retrieveAllGames() {
         return games;
     }
 
+    @Override
     public Game saveGame(Game game) {
         
         //Updating an existing game
@@ -62,9 +65,7 @@ public class GameDAOMock {
                 }
             }
         }
-        
-        
-        
+             
         
         //creating a new game, or it would overwrite the id of the game not found!
         game.setId(++gameId);
@@ -73,7 +74,8 @@ public class GameDAOMock {
         
         return game;
     }
-
+    
+    @Override
     public Boolean deleteGameByIdgameId(Long idOfGameToDelete) {
         for(int i = 0; i < games.size(); i++) {
             if(games.get(i).getId().equals(idOfGameToDelete)) {
@@ -84,7 +86,7 @@ public class GameDAOMock {
         return false;
     }
     
-    
+    @Override
     public Game findGameById(Long gameIdToFind) {
         //for each loop
         for(Game g: games) {
