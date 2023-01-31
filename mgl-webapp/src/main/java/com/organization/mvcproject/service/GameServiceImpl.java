@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.organization.mvcproject.api.model.Game;
+import com.organization.mvcproject.api.service.GameService;
 import com.organization.mvcproject.repository.GameDAOMock;
 
 @Service

@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.api.model.Game;
 import com.organization.mvcproject.api.model.Review;
-import com.organization.mvcproject.service.GameService;
+import com.organization.mvcproject.api.service.GameService;
 
 @Controller
 public class GameController {
@@ -47,11 +47,6 @@ public class GameController {
 		return new ModelAndView("gamesPage", "command", new Game());
 	}
 
-	/**
-	 * TODO 2.0 (Separation of concerns) consider moving all 
-	 * controller endpoints that return a ResponseEntity into 
-	 * a @RestController.
-	 */
 	
 	@RequestMapping(value = "/game", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames() {
