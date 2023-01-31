@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
-		[ 'MGL_Task1_Service', function(MGL_Task1_Service) {
+		[ 'MGL_Task1_Service','$log', function(MGL_Task1_Service, $log) {
 			var self = this;
 			self.game = {
 				game_id : '',
@@ -16,10 +16,27 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 				});
 			}
 
-			self.addGame = function(){
-				return MGL_Task1_Service.createGame(self.game).then( function() {
+			self.saveOrUpdateGame = function(){
+				return MGL_Task1_Service.saveOrUpdateGame(self.game).then( function() {
+				self.game = {};
 				self.fetchAllGames();
 				});
+			}
+			
+			self.selectGame = function(selectedGame){
+				self.game = angular.copy(selectedGame);
+			}
+			
+					
+			self.deleteGame = function(gameToDelete){
+				return MGL_Task1_Service.deleteGame(gameToDelete).then(function(data){
+					$log.debug(data);
+					self.fetchAllGames();
+				});
+			}
+			
+			self.clearGame = function(){
+				self.game = {};
 			}
 
 			self.fetchAllGames();
