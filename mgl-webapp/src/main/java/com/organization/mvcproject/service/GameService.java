@@ -6,8 +6,13 @@ import com.organization.mvcproject.model.Game;
 
 public interface GameService {
 
+    //Retrieve
 	List<Game> retrieveAllGames();
-
+	//Create
 	Game saveGame(Game game);
+	
+	Boolean deleteGame(Long gameId);
+	
+	Game updateGame(Game game);
 
 }
