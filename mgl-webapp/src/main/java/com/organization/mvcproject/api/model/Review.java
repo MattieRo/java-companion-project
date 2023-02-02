@@ -1,4 +1,4 @@
-package com.organization.mvcproject.model;
+package com.organization.mvcproject.api.model;
 
 public class Review {
 	
